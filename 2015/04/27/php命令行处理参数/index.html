@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 2 页 | 归档：2015/1 | Lxf&#39;s blog</title>
+  <title>php命令行处理参数 | Lxf&#39;s blog</title>
   <meta name="author" content="liangxifeng">
   
   <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="php命令行处理参数"/>
   <meta property="og:site_name" content="Lxf&#39;s blog"/>
 
   
@@ -232,49 +232,92 @@ height : e.offsetHeight,
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2015/1</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-27T02:29:39.000Z"><a href="/2015/04/27/php命令行处理参数/">2015-04-27</a></time>
+      
+      
+  
+    <h1 class="title">php命令行处理参数</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <h3 id="系统变量$argc/$argv">系统变量$argc/$argv</h3><ul>
+<li>$argc 接收参数个数</li>
+<li>$argv 接收具体参数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"参数总数为："</span>.<span class="variable">$argc</span>.<span class="string">"\n"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"具体参数为:\n"</span>;</span><br><span class="line">var_dump(<span class="variable">$argv</span>);</span><br></pre></td></tr></table></figure>
+<p>php test.php php linux  结果是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">参数总数为：<span class="number">3</span></span><br><span class="line">具体参数为:</span><br><span class="line"><span class="built_in">array</span>(<span class="number">3</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">8</span>) <span class="string">"test.php"</span>  <span class="comment">//第一个接收到的参数是当前执行的文件名</span></span><br><span class="line">  [<span class="number">1</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"php"</span></span><br><span class="line">  [<span class="number">2</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">5</span>) <span class="string">"linux"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="系统函数_getopt()">系统函数 getopt()</h3><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span></span><br><span class="line"> <span class="keyword">*</span> getopt参数说明</span><br><span class="line"> <span class="keyword">*</span> h自定义参数名，后面的:代表必选项，与后面值之间可以有空格分开</span><br><span class="line"> <span class="keyword">*</span> ::代表可选项，与值之间不允许有空格</span><br><span class="line"> <span class="keyword">*</span>/</span><br><span class="line">var_dump(getopt('h:a::'));</span><br></pre></td></tr></table></figure>
+<p>php test.php -h 123 -a 456 结果是：<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  [<span class="string">"h"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"123"</span></span><br><span class="line">  [<span class="string">"a"</span>]=&gt;</span><br><span class="line">  <span class="built_in">bool</span>(<span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>php test.php -h 123 -a456 结果是：<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  [<span class="string">"h"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"123"</span></span><br><span class="line">  [<span class="string">"a"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"456"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-01-17T01:52:54.000Z"><a href="/2015/01/17/对象的数据类型及存储方式/">2015-01-17</a></time>
-            
-              <h1 class="title"><a href="/2015/01/17/对象的数据类型及存储方式/">对象的数据类型及存储方式</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-01-15T01:15:08.000Z"><a href="/2015/01/15/面向对象基础概念/">2015-01-15</a></time>
-            
-              <h1 class="title"><a href="/2015/01/15/面向对象基础概念/">面向对象基础概念</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-01-12T04:16:19.000Z"><a href="/2015/01/12/自己的第一个独立域名博客/">2015-01-12</a></time>
-            
-              <h1 class="title"><a href="/2015/01/12/自己的第一个独立域名博客/">自己的第一个独立域名的博客</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/PHP/">PHP</a>
   </div>
+
+        
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_tools_1"></a>
+        <a class="jiathis_button_tools_2"></a>
+        <a class="jiathis_button_tools_3"></a>
+        <a class="jiathis_button_tools_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+        <a class="jiathis_counter_style"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="pagination" >
+
+
+<a href="/2015/04/22/hello-world/" class="alignright next" >下一页</a>
+
+<div class="clearfix"></div>
+</nav>
+
+<section id="comment">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="my blog id" data-title="lxf's blog" data-url="http://www.liangxifeng.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"liangxifeng"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+
+         })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
