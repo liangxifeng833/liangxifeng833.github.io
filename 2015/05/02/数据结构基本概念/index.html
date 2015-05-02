@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo速度优化 | Lxf&#39;s blog</title>
+  <title>数据结构基本概念 | Lxf&#39;s blog</title>
   <meta name="author" content="liangxifeng">
   
   <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hexo速度优化"/>
+  <meta property="og:title" content="数据结构基本概念"/>
   <meta property="og:site_name" content="Lxf&#39;s blog"/>
 
   
@@ -238,26 +238,63 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-17T03:26:44.000Z"><a href="/2015/01/17/hexo速度优化/">2015-01-17</a></time>
+        <time datetime="2015-05-02T15:48:15.000Z"><a href="/2015/05/02/数据结构基本概念/">2015-05-02</a></time>
       
       
   
-    <h1 class="title">hexo速度优化</h1>
+    <h1 class="title">数据结构基本概念</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>如果域名已经备过案，那么可以把博客托管到国内的免费服务器空间，以下两篇文章介绍如何把自己的博客托管到国内服务器：</p>
-<ul>
-<li><a href="http://zipperary.com/2013/11/13/blog-to-stdyun/" target="_blank" rel="external">托管博客到STDYUN</a></li>
-<li><a href="http://zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">托管博客到gitcafe</a></li>
+        <h3 id="数据">数据</h3><ul>
+<li>描述客观事物的符号</li>
+<li>可以输入到计算机</li>
+<li>能够被计算机程序处理</li>
 </ul>
-<p>由于我的域名没有备案，所以还是将自己的博客托管在国外的github上，刚刚建好后速度那是相当的慢，<code>无法忍受</code>，加速的原理相信有过开发经验的人都明白，就是把对应主题静态页面加载google的类库和css等修改为加载国内的即可。</p>
-<p>在hexo的初始化init目录下使用如下命令，<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#39;jquery&#39; -r ./ &#10;vim ./themes/light/layout/_partial/after_footer.ejs&#10;``` &#10;&#25628;&#32034;&#20351;&#29992; jquery &#30340;&#20301;&#32622;&#65292;&#22914;&#26524;&#26159;&#29992;&#30340; google &#30340;&#65292;&#21017;&#26367;&#25442;&#25104;&#22269;&#20869;&#30340;&#30334;&#24230;,</span><br></pre></td></tr></table></figure></p>
-<p>//libs.baidu.com/jquery/2.0.3/jquery.min.js。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">然后替换google fonts，同样的方法，</span><br><span class="line">```<span class="keyword">shell</span></span><br><span class="line"><span class="keyword">grep</span> <span class="string">'fonts'</span> -<span class="keyword">r</span> ./</span><br><span class="line"><span class="keyword">grep</span> <span class="string">'fonts.google'</span> -<span class="keyword">r</span> ./</span><br><span class="line"><span class="keyword">vim</span> ./themes/landscape/layout/_partial/head.ejs</span><br><span class="line"><span class="keyword">vim</span> ./themes/light/<span class="keyword">source</span>/css/_base/variable.styl</span><br></pre></td></tr></table></figure></p>
-<p>找到后替换为<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fonts.useso.com/css?family=Lato:400,400italic</span></span><br></pre></td></tr></table></figure></p>
-<p>修改完毕后，hexo d -g 部署到线上，在此访问 <a href="http://www.liangxifeng.com" target="_blank" rel="external">我的博客</a>，速度快了许多，但是跟国内服务器比依然稍逊色了一些，不过相对之前的速度我已经很知足了，俗话说的好 <code>知足长乐</code> !</p>
+<h3 id="数据元素">数据元素</h3><ul>
+<li>组成数据、有一定意义、也被称为记录</li>
+<li>比如：人类中人就是数据元素</li>
+</ul>
+<h3 id="数据项">数据项</h3><ul>
+<li>一个数据元素可以由很多数据项组成</li>
+<li>是不分割的最小单元</li>
+<li>比如：人是数据元素，眼睛、鼻子、嘴…是数据项。</li>
+</ul>
+<h3 id="数据对象">数据对象</h3><ul>
+<li>性质相同数据元素的集合</li>
+<li>通常将数据对象称为 <code>数据</code></li>
+</ul>
+<h2 id="数据结构_=_数据+关系">数据结构 = 数据+关系</h2><h3 id="逻辑结构_(_各个元素之间的关系_)">逻辑结构 ( 各个元素之间的关系 )</h3><ul>
+<li>集合： 平等</li>
+<li>线性： 一对一</li>
+<li>树形：一对多</li>
+<li>图形：多对多</li>
+<li>逻辑结构为了 <code>解决具体问题</code>，选择一个合适的数据结构表示数据元素之间的<code>逻辑关系</code>。</li>
+</ul>
+<h3 id="物理结构">物理结构</h3><ul>
+<li>逻辑结构在计算机中的存储形式</li>
+<li><p>顺序存储：</p>
+<ul>
+<li>数据元素存放在地址连续的存储单元里。</li>
+<li>数据间 <code>逻辑关系</code> = <code>物理关系</code></li>
+<li>物理节点 <code>只存数据</code>。</li>
+</ul>
+</li>
+<li><p>链式存储：</p>
+<ul>
+<li>数据间 <code>逻辑关系</code> != <code>物理关系</code>。</li>
+<li>数据之间通过 <code>指针</code>，指向下一个元素的地址。</li>
+<li>物理结点存  <code>数据 + 指针</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="总结">总结</h3><ul>
+<li>逻辑结构 <code>面向问题</code></li>
+<li>物理结构 <code>面向计算机</code></li>
+<li>最终 <code>目的</code> 是 将 <code>数据+逻辑关系</code> 存到PC的内存中。</li>
+</ul>
 
       
     </div>
@@ -266,7 +303,7 @@ height : e.offsetHeight,
         
   
   <div class="categories">
-    <a href="/categories/hexo/">hexo</a>
+    <a href="/categories/数据结构/">数据结构</a>
   </div>
 
         
@@ -292,10 +329,8 @@ height : e.offsetHeight,
 
 <nav id="pagination" >
 
-<a href="/2015/01/17/特殊方法的应用/" class="alignleft prev" >上一页</a>
 
-
-<a href="/2015/01/17/对象的数据类型及存储方式/" class="alignright next" >下一页</a>
+<a href="/2015/04/27/codeigniter路由实现原理/" class="alignright next" >下一页</a>
 
 <div class="clearfix"></div>
 </nav>
