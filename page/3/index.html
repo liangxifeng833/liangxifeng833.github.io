@@ -239,6 +239,59 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-02-04T01:56:49.000Z"><a href="/2015/02/04/设计模式（二）策略模式/">2015-02-04</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/04/设计模式（二）策略模式/">设计模式（二）策略模式</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="定义">定义</h3><p>Stragegy, 它定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化，不会影响到使用算法的客户。</p>
+<h3 id="要点">要点</h3><ul>
+<li>策略模式是对 <code>算法</code> 的包装，是把使用算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法包装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是：”准备一组算法，并将每一个算法封装起来，使得它们可以 <code>互换</code>。</li>
+</ul>
+<h3 id="UML">UML</h3><p><img src="/img/strategy.png" alt="strategy"></p>
+<h3 id="优点">优点</h3><p> 策略模式可以把行为和环境分割开来。环境类负责维持和查询行为类，各种算法则在具体策略类中提供。由于算法和环境独立开来，算法的增减、修改都不会影响环境和客户端。当出现新的促销折扣或现有的折扣政策出现变化时，只需要实现新的策略类，并在客户端登记即可。</p>
+<h3 id="缺点">缺点</h3><ul>
+<li>因为每个具体策略类都会产生一个新类，所以会增加系统需要维护的类的数量。</li>
+<li>在基本的策略模式中，选择所用具体实现的职责由客户端对象承担，并转给策略模式的Context对象。（这本身没有解除客户端需要选择判断的压力，而策略模式与简单工厂模式结合后，选择具体实现的职责也可以由Context来承担，这就最大化的减轻了客户端的压力。），比如以下的实例。</li>
+</ul>
+<h3 id="php代码示范">php代码示范</h3><ul>
+<li><a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/Strategy/strategy_pattern.php" target="_blank" rel="external">策略模式基础PHP代码示范</a></li>
+</ul>
+<h3 id="举例说明">举例说明</h3><ul>
+<li>商场收银系统，对一件商品有多种促销活动，那么这几种促销活动的算法最终的目的就是为了得到商品最终价钱，它们还可以相互替换。</li>
+<li><code>抽象策略角色</code> CashSuper，定义了一个公共接口，各种不同的算法以不同的方式实现这个接口。策略类通常由一个接口或者抽象类实现。　　</li>
+<li><code>具体策略角色</code>CashNormal/CashRebate/CashReturn，实现接口抽象类CashasSuper，提供具体的算法实现。</li>
+<li><code>环境角色</code> CashContext 持有一个策略类的引用，最终给客户端调用</li>
+<li><a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/Strategy/demo.php" target="_blank" rel="external">PHP代码例子</a>。</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-01-26T01:19:48.000Z"><a href="/2015/01/26/设计模式（一）工厂模式/">2015-01-26</a></time>
       
       
