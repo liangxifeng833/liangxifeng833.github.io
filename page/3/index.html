@@ -239,114 +239,6 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-03-03T04:04:02.000Z"><a href="/2015/03/03/程序发送email/">2015-03-03</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/03/03/程序发送email/">程序发送email</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="使用程序发送电子邮件总结：">使用程序发送电子邮件总结：</h2><h3 id="PHP">PHP</h3><ul>
-<li>使用简单函数发送（mail,error_log）</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mail(<span class="string">"liangxifeng@163.com"</span>,<span class="string">"title"</span>,<span class="string">"content"</span>,<span class="string">"From:&lt;test@gmail.com&gt;"</span>);</span><br><span class="line">error_log(<span class="string">"content"</span>, <span class="number">1</span>, <span class="string">"liangxifeng@163.com"</span>, <span class="string">"From: 547096390@qq.com\n"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以看出error_log的发送邮件功能也是基于mail函数的</li>
-<li>这里有另外一种方式可以实现，就是使用php发送邮件类，<a href="https://github.com/liangxifeng833/ljcodeRepository/tree/master/php/email_demo" target="_blank" rel="external">demo地址</a>，这种方式各个qq/gmail等收件箱都均可以收到。</li>
-</ul>
-<h3 id="shell">shell</h3><p>在使用shell的mail命令发送邮件前，需要安装sendmail这个Linux下的基本邮件组件：</p>
-<ul>
-<li>ubuntu：sudo apt-get install mailutils  </li>
-<li>Centos：yum install sendmail</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#34;This is a test mail.&#34; | mail -s &#34;test&#34; liangxifeng@163.com</span><br></pre></td></tr></table></figure>
-<ul>
-<li>以上使用简单函数都是向 liangxifeng@163.com邮箱发送邮件，并可以发送成功，但是我尝试了qq和gmail邮箱均无法发送成功，估计人家的反垃圾邮件技术比较好，没有经过域名认证的ip地址smtp服务器基本就是不收。也可能是sendmail服务器的dns没有设置好。</li>
-</ul>
-<h3 id="注意：">注意：</h3><ul>
-<li>php的电子邮件发送，也是基于linux系统底层的sendmail组件，所以要想使用php的mail函数发送电子邮件，就必须在对应的linux服务器中安装sendmail组件。</li>
-<li>如果linux系统已经成功安装sendmail组件，shell命令可以成功发送邮件，可是php依然无法发送，解决办法：vim /usr/local/php/php.ini<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sendmail_path = <span class="regexp">/usr/sbin</span><span class="regexp">/sendmail -t -i</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-04T01:56:49.000Z"><a href="/2015/02/04/设计模式（二）策略模式/">2015-02-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/04/设计模式（二）策略模式/">设计模式（二）策略模式</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="定义">定义</h3><p>Stragegy, 它定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化，不会影响到使用算法的客户。</p>
-<h3 id="要点">要点</h3><ul>
-<li>策略模式是对 <code>算法</code> 的包装，是把使用算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法包装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是：”准备一组算法，并将每一个算法封装起来，使得它们可以 <code>互换</code>。</li>
-</ul>
-<h3 id="UML">UML</h3><p><img src="/img/strategy.png" alt="strategy"></p>
-<h3 id="优点">优点</h3><p> 策略模式可以把行为和环境分割开来。环境类负责维持和查询行为类，各种算法则在具体策略类中提供。由于算法和环境独立开来，算法的增减、修改都不会影响环境和客户端。当出现新的促销折扣或现有的折扣政策出现变化时，只需要实现新的策略类，并在客户端登记即可。</p>
-<h3 id="缺点">缺点</h3><ul>
-<li>因为每个具体策略类都会产生一个新类，所以会增加系统需要维护的类的数量。</li>
-<li>在基本的策略模式中，选择所用具体实现的职责由客户端对象承担，并转给策略模式的Context对象。（这本身没有解除客户端需要选择判断的压力，而策略模式与简单工厂模式结合后，选择具体实现的职责也可以由Context来承担，这就最大化的减轻了客户端的压力。），比如以下的实例。</li>
-</ul>
-<h3 id="php代码示范">php代码示范</h3><ul>
-<li><a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/Strategy/strategy_pattern.php" target="_blank" rel="external">策略模式基础PHP代码示范</a></li>
-</ul>
-<h3 id="举例说明">举例说明</h3><ul>
-<li>商场收银系统，对一件商品有多种促销活动，那么这几种促销活动的算法最终的目的就是为了得到商品最终价钱，它们还可以相互替换。</li>
-<li><code>抽象策略角色</code> CashSuper，定义了一个公共接口，各种不同的算法以不同的方式实现这个接口。策略类通常由一个接口或者抽象类实现。　　</li>
-<li><code>具体策略角色</code>CashNormal/CashRebate/CashReturn，实现接口抽象类CashasSuper，提供具体的算法实现。</li>
-<li><code>环境角色</code> CashContext 持有一个策略类的引用，最终给客户端调用</li>
-<li><a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/Strategy/demo.php" target="_blank" rel="external">PHP代码例子</a>。</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2015-01-26T01:19:48.000Z"><a href="/2015/01/26/设计模式（一）工厂模式/">2015-01-26</a></time>
       
       
@@ -490,13 +382,53 @@ height : e.offsetHeight,
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-01T04:06:26.000Z"><a href="/2014/12/01/hello-world/">2014-12-01</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/01/hello-world/">Hello World</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
 
 <nav id="pagination">
   
     <a href="/page/2/" class="alignleft prev">上一页</a>
   
-  
-    <a href="/page/4/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -523,7 +455,7 @@ height : e.offsetHeight,
   
     <li><a href="/categories/随笔/">随笔</a><small>1</small></li>
   
-    <li><a href="/categories/面向对象/">面向对象</a><small>7</small></li>
+    <li><a href="/categories/面向对象/">面向对象</a><small>5</small></li>
   
   </ul>
 </div>
@@ -533,7 +465,7 @@ height : e.offsetHeight,
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/OOP/" style="font-size: NaNpx;">OOP</a><a href="/tags/PHP/" style="font-size: NaNpx;">PHP</a>
+    
   </div>
 </div>
 
