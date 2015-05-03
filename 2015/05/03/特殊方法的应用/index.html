@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>*特殊方法的应用 | Lxf&#39;s blog</title>
+  <meta name="author" content="liangxifeng">
+  
+  <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="*特殊方法的应用"/>
+  <meta property="og:site_name" content="Lxf&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Lxf&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Lxf&#39;s blog</a></h1>
+  <h2><a href="/">低调做人，高调做事！</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">存档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li> <a href="/atom.xml">RSS</a> </li>
+      <li> <a href="/sitemap.xml">sitemap</a> </li>
+      <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+              function c() {
+              var e = document.createElement("link");
+              e.setAttribute("type", "text/css");
+              e.setAttribute("rel", "stylesheet");
+              e.setAttribute("href", f);
+              e.setAttribute("class", l);
+              document.body.appendChild(e)
+
+              }
+
+              function h() {
+              var e = document.getElementsByClassName(l);
+              for (var t = 0; t < e.length; t++) {
+              document.body.removeChild(e[t])
+
+              }
+
+              }
+
+              function p() {
+                  var e = document.createElement("div");
+                  e.setAttribute("class", a);
+                  document.body.appendChild(e);
+                  setTimeout(function() {
+                          document.body.removeChild(e)
+
+                          }, 100)
+
+              }
+
+              function d(e) {
+                  return {
+height : e.offsetHeight,
+       width : e.offsetWidth
+
+                  }
+
+              }
+
+              function v(i) {
+                  var s = d(i);
+                  return s.height > e && s.height < n && s.width > t && s.width < r
+
+              }
+
+              function m(e) {
+                  var t = e;
+                  var n = 0;
+                  while (!!t) {
+                      n += t.offsetTop;
+                      t = t.offsetParent
+
+                  }
+                  return n
+
+              }
+
+              function g() {
+                  var e = document.documentElement;
+                  if (!!window.innerWidth) {
+                      return window.innerHeight
+
+                  } else if (e && !isNaN(e.clientHeight)) {
+                      return e.clientHeight
+
+                  }
+                  return 0
+
+              }
+
+              function y() {
+                  if (window.pageYOffset) {
+                      return window.pageYOffset
+
+                  }
+                  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+
+              }
+
+              function E(e) {
+                  var t = m(e);
+                  return t >= w && t <= b + w
+
+              }
+
+              function S() {
+                  var e = document.createElement("audio");
+                  e.setAttribute("class", l);
+                  e.src = i;
+                  e.loop = false;
+                  e.addEventListener("canplay", function() {
+                          setTimeout(function() {
+                              x(k)
+
+                              }, 500);
+                          setTimeout(function() {
+                              N();
+                              p();
+                              for (var e = 0; e < O.length; e++) {
+                              T(O[e])
+
+                              }
+
+                              }, 15500)
+
+                          }, true);
+                  e.addEventListener("ended", function() {
+                          N();
+                          h()
+
+                          }, true);
+                  e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+                  document.body.appendChild(e);
+                  e.play()
+
+              }
+
+              function x(e) {
+                  e.className += " " + s + " " + o
+
+              }
+
+              function T(e) {
+                  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+
+              }
+
+              function N() {
+                  var e = document.getElementsByClassName(s);
+                  var t = new RegExp("\\b" + s + "\\b");
+                  for (var n = 0; n < e.length; ) {
+                      e[n].className = e[n].className.replace(t, "")
+
+                  }
+
+              }
+
+              var e = 30;
+              var t = 30;
+              var n = 350;
+              var r = 350;
+              var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+              var s = "mw-harlem_shake_me";
+              var o = "im_first";
+              var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+              var a = "mw-strobe_light";
+              var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+              var l = "mw_added_css";
+              var b = g();
+              var w = y();
+              var C = document.getElementsByTagName("*");
+              var k = null;
+              for (var L = 0; L < C.length; L++) {
+                  var A = C[L];
+                  if (v(A)) {
+                      if (E(A)) {
+                          k = A;
+                          break
+
+                      }
+
+                  }
+
+              }
+              if (A === null) {
+                  console.warn("Could not find a node of the right size. Please try a different page.");
+                  return
+
+              }
+              c();
+              S();
+              var O = [];
+              for (var L = 0; L < C.length; L++) {
+                  var A = C[L];
+                  if (v(A)) {
+                      O.push(A)
+
+                  }
+
+              }
+
+      })()    '>High一下</a> </li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-03T12:03:37.000Z"><a href="/2015/05/03/特殊方法的应用/">2015-05-03</a></time>
+      
+      
+  
+    <h1 class="title">*特殊方法的应用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="__get($propertyName)方法">__get($propertyName)方法</h3><ul>
+<li>获取私有成员属性值</li>
+<li>有一个参数，$propertyName 是获取成员属性的名称</li>
+<li>返回值：获取属性的值</li>
+<li>当我们在对象的外部调用私有属性的时候 <code>自动</code> 调用的。</li>
+<li>如果成员属性不封装成私有的,对象本身就不会去自动调用这个方法。</li>
+<li>如果没有设置__get()，在对象的外部是不允许调用内部私有属性的。</li>
+</ul>
+<h3 id="__set($property_name,_$value)方法">__set($property_name, $value)方法</h3><ul>
+<li>用来为私有成员属性设置值的。</li>
+<li>第一个参数为你要为设置值的属性名,第二个参数是要给属性设置的值。</li>
+<li>返回值：无。</li>
+<li>在对象外部直接设置私有属性值的时候 <code>自动</code> 调用的,同样属性私有的已经被封装上了。</li>
+<li>如果成员属性不封装成私有的,对象本身就不会去自动调用这个方法。</li>
+<li>如果没有设置__set()，在对象的外部是不允许设置私有属性的。<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//下面是人的成员属性, 都是封装的私有成员</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$name</span>; <span class="comment">//人的名字</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$sex</span>; <span class="comment">//人的性别</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$age</span>; <span class="comment">//人的年龄</span></span><br><span class="line">    <span class="comment">//__get()方法用来获取私有属性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__get</span><span class="params">(<span class="variable">$property_name</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"在直接获取私有属性值的时候,自动调用了这个__get()方法&lt;br&gt;"</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$this</span>-&gt;<span class="variable">$property_name</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>(<span class="variable">$this</span>-&gt;<span class="variable">$property_name</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>(<span class="keyword">NULL</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//__set()方法用来设置私有属性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__set</span><span class="params">(<span class="variable">$property_name</span>, <span class="variable">$value</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"在直接设置私有属性值的时候,自动调用了这个__set()方法为私有  属性赋值&lt;br&gt;"</span>;</span><br><span class="line">        <span class="variable">$this</span>-&gt;<span class="variable">$property_name</span> = <span class="variable">$value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$p1</span>=<span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//直接为私有属性赋值的操作, 会 `自动调用` __set()方法进行赋值</span></span><br><span class="line"><span class="variable">$p1</span>-&gt;name=<span class="string">"张三"</span>;</span><br><span class="line"><span class="variable">$p1</span>-&gt;sex=<span class="string">"男"</span>;</span><br><span class="line"><span class="variable">$p1</span>-&gt;age=<span class="number">20</span>;</span><br><span class="line"><span class="comment">//直接获取私有属性的值, 会 `自动调用` __get()方法,返回成员属性的值</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"姓名:"</span>.<span class="variable">$p1</span>-&gt;name.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"性别:"</span>.<span class="variable">$p1</span>-&gt;sex.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"年龄:"</span>.<span class="variable">$p1</span>-&gt;age.<span class="string">"&lt;br&gt;"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上代码如果不加上<strong>get()和</strong>set()方法,程序就会出错,因为不能在类的外部操作私有成员,而上面的代码是通过 <code>自动调用</code> <strong>get()和</strong>set()方法来帮助我们直接存取封装的私有成员的。</p>
+<h3 id="__isset()方法">__isset()方法</h3><ul>
+<li>如果在一个对象外面使用“isset()”这个函数去测定对象里面的成员是否被设定分两种情况：<ul>
+<li>如果对象里面成员是公有的,我们就可以使用这个函数来测定成员属性。</li>
+<li>如果是私有的成员属性,这个函数就不起作用了,原因就是因为私有的被封装了,在外部不可见。</li>
+</ul>
+</li>
+<li>在类里面加上一个 <code>__isset()</code> 方法就可以了,当在类外部使用 <code>isset()</code>函数来测定对象里面的私有成员是否被设定时, 就会 <code>自动</code> 调用类里的“__isset()”方法了帮我们完成这样的操作。<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$name</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__isset</span><span class="params">(<span class="variable">$nm</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"当在类外部使用isset()函数测定私有成员$nm时,自动调用&lt;br&gt;"</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">isset</span>(<span class="variable">$this</span>-&gt;<span class="variable">$nm</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$p1</span> =  <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//在使用isset()函数测定私有成员时,`自动调用` __isset()方法帮我们完成,返回结果为true</span></span><br><span class="line"><span class="keyword">echo</span> var_dump(<span class="keyword">isset</span>(<span class="variable">$p1</span>-&gt;name)).<span class="string">"&lt;br&gt;"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="__unset()方法">__unset()方法</h3><p>道理和__isset()方法一样，只不过是在对象的外部删除内部的私有成员时 <code>自动调用</code> 的。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$name</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__unset</span><span class="params">(<span class="variable">$nm</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"当在类外部使用unset()函数来删除私有成员时自动调用的&lt;br&gt;"</span>;</span><br><span class="line">        <span class="keyword">unset</span>(<span class="variable">$this</span>-&gt;<span class="variable">$nm</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$p1</span> = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//在使用unset()函数删除私有成员时,`自动调用` __unset()方法帮我们完成,删除name私有属性</span></span><br><span class="line"><span class="keyword">unset</span>(<span class="variable">$p1</span>-&gt;name);</span><br></pre></td></tr></table></figure></p>
+<p><code>__set()</code>、<code>__get()</code>、<code>__isset()</code>、<code>__unset()</code> 这四个方法都是我们添加到对象里面的,在需要时 <code>自动调用</code> 的,来完成在对象外部对对象内部私有属性的操作。</p>
+<hr>
+<h3 id="__toString()方法">__toString()方法</h3><ul>
+<li>在直接输出对象引用时 <code>自动调用</code> 的，比如 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestClass</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$foo</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$foo</span>)</span> </span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="variable">$this</span>-&gt;foo = <span class="variable">$foo</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//定义一个__toString方法,返加一个成员属性$foo</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span><span class="params">()</span> </span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;foo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$class</span> = <span class="keyword">new</span> TestClass(<span class="string">'Hello'</span>);</span><br><span class="line"><span class="comment">//直接输出对象</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$class</span>; <span class="comment">//这个时候会 `自动调用` TestClass类里面的 __toString()方法，如果不定义__toString()方法，程序会报错</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">###clone 克隆对象</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>$p1=new Person(“张三”, “男”, 20);<br>//使用“clone”克隆新对象 p2,和 p1 对象具有相同的属性和方法。<br>$p2=clone $p1;<br>$p2-&gt;say();<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### __clone() 方法</span><br><span class="line">* 对象克隆时 <span class="escape">`自</span>动调用<span class="escape">` </span>的方法。</span><br><span class="line">* 自动包含 <span class="escape">`$</span>this<span class="escape">` </span> 和 <span class="escape">`$</span>that<span class="escape">` </span> 两个指针, <span class="escape">`$</span>this<span class="escape">` </span>指向复本,而 <span class="escape">`$</span>that<span class="escape">` </span>指向原本。</span><br></pre></td></tr></table></figure></p>
+<p>class Person<br>{<br>    //下面是人的成员属性<br>    var $name; //人的名字<br>    var $sex; //人的性别<br>    var $age; //人的年龄<br>    //定义一个构造方法参数为属性姓名$name、性别$sex 和年龄$age 进行赋值<br>    function <strong>construct($name=””, $sex=””, $age=””)<br>    {<br>        $this-&gt;name=$name;<br>        $this-&gt;sex=$sex;<br>        $this-&gt;age=$age;<br>    }<br>    //这个人可以说话的方法, 说出自己的属性<br>    function say()<br>    {<br>        echo “我的名字叫:”.$this-&gt;name.” 性别:”.$this-&gt;sex.” 我的年龄是:”.$this-&gt;age.”<br>“;<br>    }<br>    function </strong>clone()<br>    {<br>        //$this 指的复本 p2, 而$that 是指向原本 p1,这样就在本方法里,改变了复本的属性。<br>        $this-&gt;name=”我是假的$that-&gt;name”;<br>        $this-&gt;age=30;<br>    }<br>}<br>$p1=new Person(“张三”, “男”, 20);<br>$p2=clone $p1;<br>$p1-&gt;say();<br>$p2-&gt;say();<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">执行结果是：</span><br></pre></td></tr></table></figure></p>
+<p>我的名字叫:张三 性别:男 我的年龄是:20<br>我的名字叫:我是假的张三 性别:男 我的年龄是:30<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">###__call() 方法 </span></span><br><span class="line"><span class="bullet">* </span>使用对象调用内部方法时候，不存在该方法，那么程序就会出错,然后程序退出不能继续执行。</span><br><span class="line"><span class="bullet">* </span>__call() 就是调用不存在方法的时候 <span class="code">`自动调用`</span> 的</span><br></pre></td></tr></table></figure></p>
+<p>class Test<br>{<br>    //调用不存的方法时自动调用的方法,第一个参数为方法名,第二个参数是数组参数<br>    function __call($function_name,$args)<br>    {<br>        print “你所调用的函数:$function_name(参数:”;<br>        print_r($args);<br>        print “)不存在!<br>\n”;<br>    }<br>}<br>//产生一个Test类的对象<br>$test=new Test();<br>//调用对象里不存在的方法<br>$test-&gt;demo(“one”, “two”, “three”);<br>//程序不会退出可以执行到这里<br>echo “this is a test<br>“;<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以上程序执行结果：</span><br></pre></td></tr></table></figure></p>
+<p>你所调用的函数:demo(参数:Array ( [0] =&gt; one [1] =&gt; two [2] =&gt; three ) )不存在!<br>this is a test.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">###unserialize()</span></span><br><span class="line"><span class="bullet">* </span>为了方便把一个对象在网络上传输，可以把整个对象转换为二进制串，传输到目的地时，再还原为原来的对象，这个过程称之为串行化。</span><br><span class="line"><span class="bullet">* </span><span class="code">`serialize()`</span> 串行化一个对象;</span><br><span class="line"><span class="bullet">* </span><span class="code">` unserialize()`</span> 反串行化对象;</span><br></pre></td></tr></table></figure></p>
+<p>$p1=new Person(“张三”, “男”, 20);<br>$p1_string=serialize($p1); //把一个对象串行化,返一个字符串<br>echo $p1_string.”<br>“; //串行化的字符串我们通常不去解析<br>$p2=unserialize($p1_string); //把一个串行化的字符串反串行化形成对象$p2<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">### __sleep()</span></span><br><span class="line"><span class="bullet">* </span>对象串行化的时候会调用该方法。</span><br><span class="line"><span class="bullet">* </span>函数不接受任何参数, 但返回一个数组，其中包含需要串行化的属性。</span><br><span class="line"><span class="bullet">* </span>末被包含的属性将在串行化时被忽略。</span><br><span class="line"><span class="bullet">* </span>如果没有__sleep()方法,PHP 将保存所有属性。</span><br><span class="line"><span class="bullet">* </span>在对象使用serialize()序列化的时候 <span class="code">`自动调用`</span> 的。</span><br><span class="line"></span><br><span class="line"><span class="header">### __wakeup()</span></span><br><span class="line"><span class="bullet">* </span>由二进制串重新组成一个对象的时候,则会 <span class="code">`自动调用`</span> __wakeup(),做一些对象醒来就要做的动作。</span><br></pre></td></tr></table></figure></p>
+<p>class Person<br>{<br>    public $name;<br>    public $sex;<br>    public $age;</p>
+<pre><code><span class="comment">//定义一个构造方法参数为属性姓名$name、性别$sex 和年龄$age 进行赋值</span>
+<span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$name</span>=<span class="string">""</span>,<span class="variable">$sex</span>=<span class="string">""</span>,<span class="variable">$age</span>=<span class="string">""</span>)</span>
+</span>{
+    <span class="variable">$this</span>-&gt;name = <span class="variable">$name</span>;
+    <span class="variable">$this</span>-&gt;sex = <span class="variable">$sex</span>;
+    <span class="variable">$this</span>-&gt;age = <span class="variable">$age</span>;
+}
+<span class="comment">//这个人可以说话的方法, 说出自己的属性</span>
+<span class="function"><span class="keyword">function</span> <span class="title">say</span><span class="params">()</span>
+</span>{
+    <span class="keyword">echo</span> <span class="string">"我的名字叫:"</span>.<span class="variable">$this</span>-&gt;name.<span class="string">" 性别:"</span>.<span class="variable">$this</span>-&gt;sex.<span class="string">" 我的年龄是:"</span>.<span class="variable">$this</span>-&gt;age.<span class="string">"&lt;br&gt;"</span>;
+}
+<span class="comment">//指定串行化时把返回的数组中$name 和$age 值串行化,忽略没在数组中的属性$sex</span>
+<span class="function"><span class="keyword">function</span> <span class="title">__sleep</span><span class="params">()</span>
+</span>{
+    <span class="variable">$arr</span> = <span class="keyword">array</span>(<span class="string">"name"</span>,<span class="string">"age"</span>);
+    <span class="keyword">return</span> <span class="variable">$arr</span>;
+}
+<span class="comment">//重新生成对象时,并重新赋值$age为40</span>
+<span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span><span class="params">()</span>
+</span>{
+    <span class="variable">$this</span>-&gt;age = <span class="number">40</span>;
+}
+</code></pre><p>}<br>$p1=new Person(“张三”, “男”, 20);<br>//把一个对象串行化,返一个字符串,调用了__sleep()方法,忽略没在数组中的属性$sex<br>$p1_string=serialize($p1);<br>echo $p1_string.”<br>“;      //串行化的字符串我们通常不去解析<br>$p2=unserialize($p1_string); //反串行化形成对象$p2重新赋值$age为40<br>$p2-&gt;say();<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以上代码输出结果：</span><br></pre></td></tr></table></figure></p>
+<p>O:6:”Person”:2:{s:4:”name”;s:6:”张三”;s:3:”age”;i:20;}<br>我的名字叫:张三 性别: 我的年龄是:40<br>```</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/面向对象/">面向对象</a>
+  </div>
+
+        
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_tools_1"></a>
+        <a class="jiathis_button_tools_2"></a>
+        <a class="jiathis_button_tools_3"></a>
+        <a class="jiathis_button_tools_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+        <a class="jiathis_counter_style"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="pagination" >
+
+
+<a href="/2015/05/03/关键字说明/" class="alignright next" >下一页</a>
+
+<div class="clearfix"></div>
+</nav>
+
+<section id="comment">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="my blog id" data-title="lxf's blog" data-url="http://www.liangxifeng.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"liangxifeng"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+
+         })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:liangxifeng.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/PHP/">PHP</a><small>4</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>2</small></li>
+  
+    <li><a href="/categories/linux/">linux</a><small>1</small></li>
+  
+    <li><a href="/categories/数据结构/">数据结构</a><small>1</small></li>
+  
+    <li><a href="/categories/随笔/">随笔</a><small>1</small></li>
+  
+    <li><a href="/categories/面向对象/">面向对象</a><small>7</small></li>
+  
+  </ul>
+</div>
+
+
+  
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+<li><a href="http://www.arkulo.com/" title="平静的技术" target="_blank">平静的技术</a></li>
+<li><a href="http://lv-code.github.io/" title="刚子的博客" target="_blank">刚子的博客</a></li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 liangxifeng
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
