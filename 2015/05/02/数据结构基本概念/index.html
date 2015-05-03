@@ -294,7 +294,7 @@ height : e.offsetHeight,
 <li>物理结点存  <code>数据 + 指针</code></li>
 <li>产生外部碎片。（外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域。）</li>
 <li>数据的插入/删除快，查询慢。</li>
-<li>memcached： slab+chunk 把大小空间分开，slab是聚合，chunk是大小。</li>
+<li>memcached： 为了避免外部碎片产生，内存的分配规则是：slab+chunk 把大小空间分开，slab是聚合，chunk是大小。</li>
 </ul>
 </li>
 </ul>
