@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档：2015/3 | Lxf&#39;s blog</title>
+  <title>设计模式（一）工厂模式 | Lxf&#39;s blog</title>
   <meta name="author" content="liangxifeng">
   
   <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="设计模式（一）工厂模式"/>
   <meta property="og:site_name" content="Lxf&#39;s blog"/>
 
   
@@ -232,49 +232,113 @@ height : e.offsetHeight,
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2015/3</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-26T01:19:48.000Z"><a href="/设计模式（一）工厂模式/">2015-01-26</a></time>
+      
+      
+  
+    <h1 class="title">设计模式（一）工厂模式</h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>在面向对象编程中，一些情况下, new操作符直接生成对象会带来一些问题。</li>
+<li>举例来说, 许多类型对象的创造需要一系列的步骤: 你可能需要计算或取得对象的初始设置; 选择生成哪个子对象实例; 或在生成你需要的对象之前必须先生成一些辅助功能的对象。 在这些情况,新对象的建立就是一个 <code>过程</code>，不仅是一个操作，像一部大机器中的一个齿轮传动。</li>
+<li>建立一个 <code>工厂来创建对象</code>，可以轻松方便地构造对象实例，而不必关心构造对象实例的细节和复杂过程。</li>
+<li>工厂模式主要是为创建对象提供 <code>过渡接口</code>，以便将创建对象的具体过程屏蔽隔离起来，达到提高灵活性的目的。 </li>
+<li>GOF在《设计模式》一书中将工厂模式分为两类：工厂方法模式（Factory Method）与抽象工厂模式（Abstract Factory）。将简单工厂模式（Simple Factory）看为工厂方法模式的一种特例，两者归为一类。 </li>
+<li>简单工厂模式实例代码：<a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/factory/demo.php" target="_blank" rel="external">简单工厂模式</a></li>
+<li>工厂方法模式：<ul>
+<li>一个抽象产品类，可以派生出多个具体产品类。   </li>
+<li>一个抽象工厂类，可以派生出多个具体工厂类。   </li>
+<li>每个具体工厂类只能创建一个具体产品类的实例。</li>
+<li>代码实例：<a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/factory/factory_1.php" target="_blank" rel="external">工厂方法模式</a></li>
+</ul>
+</li>
+<li>抽象工厂模式：<ul>
+<li>多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。   </li>
+<li>一个抽象工厂类，可以派生出多个具体工厂类。   </li>
+<li>每个具体工厂类可以创建多个具体产品类的实例。 </li>
+<li>代码实例：<a href="https://github.com/liangxifeng833/my_program/blob/master/php/OOP/factory/factory_2.php" target="_blank" rel="external">抽象工厂模式</a>  </li>
+</ul>
+</li>
+<li><code>工厂方法</code> 与 <code>抽象工厂</code> 的区别：<ul>
+<li>工厂方法模式只有一个抽象产品类，而抽象工厂模式有多个。   </li>
+<li>工厂方法模式的具体工厂类只能创建一个具体产品类的实例，而抽象工厂模式可以创建多个。</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料：">参考资料：</h3><p><a href="http://blog.csdn.net/hguisu/article/details/7505909" target="_blank" rel="external">设计模式（一）工厂模式Factory（创建型）</a><br><a href="http://blog.csdn.net/uuleaf/article/category/1151556" target="_blank" rel="external">PHP设计模式</a></p>
 
-  <div class="archive">
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-03-28T13:09:41.000Z"><a href="/docker安装坎坷之路/">2015-03-28</a></time>
-            
-              <h1 class="title"><a href="/docker安装坎坷之路/">docker安装坎坷之路</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-03-07T13:28:57.000Z"><a href="/设计模式（三）装饰模式/">2015-03-07</a></time>
-            
-              <h1 class="title"><a href="/设计模式（三）装饰模式/">设计模式（三）装饰模式</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-03-03T04:04:02.000Z"><a href="/程序发送email/">2015-03-03</a></time>
-            
-              <h1 class="title"><a href="/程序发送email/">程序发送email</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/面向对象/">面向对象</a>
   </div>
+
+        
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_tools_1"></a>
+        <a class="jiathis_button_tools_2"></a>
+        <a class="jiathis_button_tools_3"></a>
+        <a class="jiathis_button_tools_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+        <a class="jiathis_counter_style"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="pagination" >
+
+<a href="/设计模式（二）策略模式/" class="alignleft prev" >上一页</a>
+
+
+<a href="/理解面向对象设计原则/" class="alignright next" >下一页</a>
+
+<div class="clearfix"></div>
+</nav>
+
+<section id="comment">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="my blog id" data-title="lxf's blog" data-url="http://www.liangxifeng.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"liangxifeng"};
+        (function() {
+         var ds = document.createElement('script');
+         ds.type = 'text/javascript';ds.async = true;
+         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+         ds.charset = 'UTF-8';
+         (document.getElementsByTagName('head')[0] 
+          || document.getElementsByTagName('body')[0]).appendChild(ds);
+
+         })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
