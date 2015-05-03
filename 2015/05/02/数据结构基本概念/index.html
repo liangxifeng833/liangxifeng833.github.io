@@ -284,6 +284,7 @@ height : e.offsetHeight,
 <li>数据间 <code>逻辑关系</code> = <code>物理关系</code></li>
 <li>物理节点 <code>只存数据</code>。</li>
 <li>产生内存内部碎片。(内部碎片就是已经被分配出去（能明确指出属于哪个进程）却不能被利用的内存空间)。</li>
+<li>数据的插入/删除 <code>复杂</code>， 查询快。</li>
 </ul>
 </li>
 <li><p>链式存储：</p>
@@ -292,6 +293,8 @@ height : e.offsetHeight,
 <li>数据之间通过 <code>指针</code>，指向下一个元素的地址。</li>
 <li>物理结点存  <code>数据 + 指针</code></li>
 <li>产生外部碎片。（外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域。）</li>
+<li>数据的插入/删除快，查询慢。</li>
+<li>memcached： slab+chunk 把大小空间分开，slab是聚合，chunk是大小。</li>
 </ul>
 </li>
 </ul>
