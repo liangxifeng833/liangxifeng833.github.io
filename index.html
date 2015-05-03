@@ -239,6 +239,39 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-05-03T11:51:34.000Z"><a href="/2015/05/03/关键字说明/">2015-05-03</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/03/关键字说明/">关键字说明12</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-05-03T11:36:33.000Z"><a href="/2015/05/03/面向对象基础概念/">2015-05-03</a></time>
       
       
@@ -539,55 +572,6 @@ height : e.offsetHeight,
 <h3 id="系统函数_getopt()">系统函数 getopt()</h3><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span></span><br><span class="line"> <span class="keyword">*</span> getopt参数说明</span><br><span class="line"> <span class="keyword">*</span> h自定义参数名，后面的:代表必选项，与后面值之间可以有空格分开</span><br><span class="line"> <span class="keyword">*</span> ::代表可选项，与值之间不允许有空格</span><br><span class="line"> <span class="keyword">*</span>/</span><br><span class="line">var_dump(getopt('h:a::'));</span><br></pre></td></tr></table></figure>
 <p>php test.php -h 123 -a 456 结果是：<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  [<span class="string">"h"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"123"</span></span><br><span class="line">  [<span class="string">"a"</span>]=&gt;</span><br><span class="line">  <span class="built_in">bool</span>(<span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>php test.php -h 123 -a456 结果是：<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">array</span>(<span class="number">2</span>) &#123;</span><br><span class="line">  [<span class="string">"h"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"123"</span></span><br><span class="line">  [<span class="string">"a"</span>]=&gt;</span><br><span class="line">  <span class="built_in">string</span>(<span class="number">3</span>) <span class="string">"456"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-04T04:06:26.000Z"><a href="/2015/04/04/php实现orm实例/">2015-04-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/04/php实现orm实例/">php实现orm实例</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="ORM_概念">ORM 概念</h3><ul>
-<li>Object  Relation Mapping的简写，一般称作“对象关系映射”。</li>
-<li>在Web开发中最常用于和关系型数据库交互的地方。接口、中间件、库、包，你都可以这么称呼它。</li>
-<li>比如：MySQL的一张表映射成一个PHP类（模型model），表的字段就是这个类的成员变量。那么这个中间操作就是ORM。</li>
-</ul>
-<h3 id="实例分析">实例分析</h3><ul>
-<li>公司会员系统项目，会员有三个实体类（会员基本信息类，会员等级类，会员积分类）。</li>
-<li>DAL相当于mysql数据表（会员基本信息，会员等级，会员积分）。</li>
-<li>以上每张表和类都是对应关系，每张表的字段相当于类的属性。</li>
-<li>ORM类起到实体类和数据表之间的映射作用。</li>
-</ul>
-<h3 id="设计">设计</h3><p><img src="/img/ORM.png" alt="ORM"></p>
-<h3 id="代码">代码</h3><ul>
-<li><a href="http://lv-code.com/2015/04/03/php-orm-test/" target="_blank" rel="external">实际代码实例</a></li>
-<li>以上代码是引用刚子的博客，在代码中还使用的php反射机制。</li>
-</ul>
 
       
     </div>
