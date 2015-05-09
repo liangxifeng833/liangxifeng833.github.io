@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo速度优化 | Lxf&#39;s blog</title>
+  <title>栈 | Lxf&#39;s blog</title>
   <meta name="author" content="liangxifeng">
   
   <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hexo速度优化"/>
+  <meta property="og:title" content="栈"/>
   <meta property="og:site_name" content="Lxf&#39;s blog"/>
 
   
@@ -238,26 +238,224 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-17T03:26:44.000Z"><a href="/2015/01/17/hexo速度优化/">2015-01-17</a></time>
+        <time datetime="2015-05-09T15:24:43.000Z"><a href="/2015/05/09/栈/">2015-05-09</a></time>
       
       
   
-    <h1 class="title">hexo速度优化</h1>
+    <h1 class="title">栈</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>如果域名已经备过案，那么可以把博客托管到国内的免费服务器空间，以下两篇文章介绍如何把自己的博客托管到国内服务器：</p>
-<ul>
-<li><a href="http://zipperary.com/2013/11/13/blog-to-stdyun/" target="_blank" rel="external">托管博客到STDYUN</a></li>
-<li><a href="http://zipperary.com/2013/11/23/hexo-to-gitcafe/" target="_blank" rel="external">托管博客到gitcafe</a></li>
+        <h2 id="概念">概念</h2><ul>
+<li>特殊的线性表；</li>
+<li>后进先出，栈底先进，栈顶后进；<code>LIFO</code> ( Last In First Out )</li>
+<li>插入和删除操作都在栈顶；  </li>
 </ul>
-<p>由于我的域名没有备案，所以还是将自己的博客托管在国外的github上，刚刚建好后速度那是相当的慢，<code>无法忍受</code>，加速的原理相信有过开发经验的人都明白，就是把对应主题静态页面加载google的类库和css等修改为加载国内的即可。</p>
-<p>在hexo的初始化init目录下使用如下命令，<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#39;jquery&#39; -r ./ &#10;vim ./themes/light/layout/_partial/after_footer.ejs&#10;``` &#10;&#25628;&#32034;&#20351;&#29992; jquery &#30340;&#20301;&#32622;&#65292;&#22914;&#26524;&#26159;&#29992;&#30340; google &#30340;&#65292;&#21017;&#26367;&#25442;&#25104;&#22269;&#20869;&#30340;&#30334;&#24230;,</span><br></pre></td></tr></table></figure></p>
-<p>//libs.baidu.com/jquery/2.0.3/jquery.min.js。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">然后替换google fonts，同样的方法，</span><br><span class="line">```<span class="keyword">shell</span></span><br><span class="line"><span class="keyword">grep</span> <span class="string">'fonts'</span> -<span class="keyword">r</span> ./</span><br><span class="line"><span class="keyword">grep</span> <span class="string">'fonts.google'</span> -<span class="keyword">r</span> ./</span><br><span class="line"><span class="keyword">vim</span> ./themes/landscape/layout/_partial/head.ejs</span><br><span class="line"><span class="keyword">vim</span> ./themes/light/<span class="keyword">source</span>/css/_base/variable.styl</span><br></pre></td></tr></table></figure></p>
-<p>找到后替换为<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fonts.useso.com/css?family=Lato:400,400italic</span></span><br></pre></td></tr></table></figure></p>
-<p>修改完毕后，hexo d -g 部署到线上，在此访问 <a href="http://www.liangxifeng.com" target="_blank" rel="external">我的博客</a>，速度快了许多，但是跟国内服务器比依然稍逊色了一些，不过相对之前的速度我已经很知足了，俗话说的好 <code>知足长乐</code> !</p>
+<hr>
+<a id="more"></a>
+<h2 id="应用场景">应用场景</h2><ul>
+<li>需要保存前边数据元素的情况；</li>
+<li>比如：访问轨迹、撤销命令、递归、后缀表达式（逆波兰式）等。</li>
+</ul>
+<h2 id="顺序存储">顺序存储</h2><ul>
+<li>满足线性表顺序存储的特性；</li>
+<li>顺序栈；</li>
+<li>用数组实现，底位是栈底，高位是栈顶。</li>
+<li><code>top</code> 变量指示栈顶元素在数组中的位置；（可变）。<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/LIFO.png" alt="FILO"></li>
+<li><strong> 两栈共享空间 </strong> ：<ul>
+<li>用一个数组存两个栈；</li>
+<li>A栈栈底始端（下标=0），B栈栈底末端（下标=n-1）；</li>
+<li>两栈增加元素，向中间延伸；</li>
+<li>两栈 <code>数据类型</code> 必须相同；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/FILO-share-new.png" alt="FILO-share"></li>
+</ul>
+</li>
+</ul>
+<h2 id="链式存储">链式存储</h2><ul>
+<li>满足线性表链式存储特性；</li>
+<li>链栈；</li>
+<li>无头结点，头指针=栈顶指针 <code>top</code>；</li>
+<li>无栈满的情况（除非内存满）；</li>
+<li>top=NULL 代表空；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/FILO-chain.png" alt="FILO-chain"></li>
+<li>讨论板图：<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/stack.jpg" alt="stack"></li>
+</ul>
+<h2 id="栈的应用">栈的应用</h2><h3 id="斐波那契数列"><strong>斐波那契数列</strong></h3><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+<th style="text-align:right"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经过的月数</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>兔子对数</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">55</td>
+<td style="text-align:center">89</td>
+<td style="text-align:center">144</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>兔子在出生两个月后有繁殖能力。</li>
+<li>一对兔子每个月能生出一对小兔子（假设所有兔子都不死），那么一年后会生出多少对兔子？</li>
+<li>n=0; f(n)=0;</li>
+<li>n=1; f(n) = 1;</li>
+<li>n&gt;1; f(n) = f(n-2)+f(n-1); </li>
+<li>代码实现，以下两种方式分别是循环、递归：</li>
+</ul>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line"><span class="comment">&#123;</span><br><span class="line">    int i; </span><br><span class="line">    int a[40]; </span><br><span class="line">    a[0] = 0; </span><br><span class="line">    a[1] = 1; </span><br><span class="line">    printf("%d\n", a[0]); </span><br><span class="line">    printf("%d\n", a[1]); </span><br><span class="line">    for(i=2; i&lt;13; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = a[i-1] + a[i-2]; </span><br><span class="line">        printf("%d\n", a[i]); </span><br><span class="line">    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span>&lt;stdio.h&gt;</span>
+<span class="function"><span class="keyword">int</span> <span class="title">Fbi</span><span class="params">(<span class="keyword">int</span> i)</span>
+</span>{
+    <span class="keyword">if</span>( i&lt;<span class="number">2</span> )
+    {
+        <span class="keyword">return</span> i == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>; 
+    }
+    <span class="keyword">return</span> Fbi(i-<span class="number">1</span>) + Fbi(i-<span class="number">2</span>); 
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>
+</span>{
+    <span class="keyword">int</span> i; 
+    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">13</span>; i++)
+    {
+        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, Fbi(i)); 
+    }
+}
+</code></pre><h3 id="四則运算表达式（逆波兰式）求值"><strong>四則运算表达式（逆波兰式）求值</strong></h3><ul>
+<li>标准的四則表达式 9 + ( 8 - 2 ) / 3 * 2 + 10 / 5，称为 <code>中缀表达式</code>；</li>
+<li>中缀表达式转为 后缀表达式的规则：<ol>
+<li>从左到右遍历中缀表达式的每个元素；</li>
+<li>遍历过程中 <code>数字</code> 输出（成为后缀表达式的一部分）；</li>
+<li>遍历过程中 <code>符号</code> ，判断与 <code>栈顶</code> 符号的优先级，如果是右括号或优先级 <code>&lt;=</code> 栈顶符号，則栈顶元素（符号）依次出栈并输出，直到遇到栈顶元素比自己优先级高为止，否则栈顶依次全部输出；</li>
+<li>将当前符号进栈，最终输出为后缀表达式；</li>
+<li>总结：<code>遇见数字就输出，遇见符号就进出栈</code>；</li>
+</ol>
+</li>
+<li>实例：中缀表达式 9 + ( 8 - 2 ) / 3 * 2 + 10 / 5 转换为后缀表达式。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">后缀串</th>
+<th style="text-align:left">操作符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">9</td>
+<td style="text-align:left"><em> <code>输出 9</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td style="text-align:left">+    <em> <code>加号入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td style="text-align:left">+ (   <em> <code>左括号入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8</td>
+<td style="text-align:left">+ (    <em> <code>输出 8</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8</td>
+<td style="text-align:left">+ ( -     <em> <code>减号 入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2</td>
+<td style="text-align:left">+ ( -     <em> <code>输出 2</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 -</td>
+<td style="text-align:left">+     <em> <code>遇见右括号，括号内减号出栈输出</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 -</td>
+<td style="text-align:left">+ /   <em> <code>除号 入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3</td>
+<td style="text-align:left">+ /   <em> <code>输出 3</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 /</td>
+<td style="text-align:left">+ *   <em> <code>乘优先级=栈顶除，除出栈，乘优先级&gt;加，+不出栈，乘入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2</td>
+<td style="text-align:left">+ *   <em> <code>输出 2</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2 * +</td>
+<td style="text-align:left">+    <em> <code>乘出栈，加出栈，+进栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2 * + 10</td>
+<td style="text-align:left">+    <em> <code>输出 10</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2 * + 10</td>
+<td style="text-align:left">+ /    <em> <code>除入栈</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2 * + 10 5</td>
+<td style="text-align:left">+ /    <em> <code>输出5</code> </em></td>
+</tr>
+<tr>
+<td style="text-align:right">9 8 2 - 3 / 2 * + 10 5 / +</td>
+<td style="text-align:left"><em> <code>最后除出栈，加出栈</code> </em></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>转换后的后缀表达式：9 8 2 - 3 / 2 * + 10 5 / + </li>
+<li>后缀表达式在计算机的运算规则如下：<ol>
+<li>从左到右遍历表达式每个元素；</li>
+<li>遇到数字就进栈，遇到符号就将栈顶两个数字出栈，进行运算。</li>
+</ol>
+</li>
+<li><p>以上后缀表达式在计算机的运算过程是：<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/FILO-demo.png" alt="FILO-demo"></p>
+</li>
+<li><p>讨论板图：<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/houzhui-2.jpg" alt="houzhui"></p>
+</li>
+</ul>
 
       
     </div>
@@ -266,10 +464,15 @@ height : e.offsetHeight,
         
   
   <div class="categories">
-    <a href="/categories/hexo/">hexo</a>
+    <a href="/categories/数据结构/">数据结构</a>
   </div>
 
         
+  
+  <div class="tags">
+    <a href="/tags/data-structure/">data-structure</a>, <a href="/tags/foundation/">foundation</a>
+  </div>
+
         <!-- JiaThis Button BEGIN -->
         <div class="jiathis_style">
         <span class="jiathis_txt">分享到：</span>
@@ -292,10 +495,8 @@ height : e.offsetHeight,
 
 <nav id="pagination" >
 
-<a href="/2015/01/17/特殊方法的应用/" class="alignleft prev" >上一页</a>
 
-
-<a href="/2015/01/17/对象的数据类型及存储方式/" class="alignright next" >下一页</a>
+<a href="/2015/05/03/线性表/" class="alignright next" >下一页</a>
 
 <div class="clearfix"></div>
 </nav>
