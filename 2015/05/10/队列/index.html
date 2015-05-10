@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>php实现orm实例 | Lxf&#39;s blog</title>
+  <title>队列 | Lxf&#39;s blog</title>
   <meta name="author" content="liangxifeng">
   
   <meta name="description" content="关注互联网技术，linux php mysql apache nginx javascript html css nodejs Yii CI">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="php实现orm实例"/>
+  <meta property="og:title" content="队列"/>
   <meta property="og:site_name" content="Lxf&#39;s blog"/>
 
   
@@ -238,32 +238,48 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-04T04:06:26.000Z"><a href="/2015/04/04/php实现orm实例/">2015-04-04</a></time>
+        <time datetime="2015-05-10T08:32:49.000Z"><a href="/2015/05/10/队列/">2015-05-10</a></time>
       
       
   
-    <h1 class="title">php实现orm实例</h1>
+    <h1 class="title">队列</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="ORM_概念">ORM 概念</h3><ul>
-<li>Object  Relation Mapping的简写，一般称作“对象关系映射”。</li>
-<li>在Web开发中最常用于和关系型数据库交互的地方。接口、中间件、库、包，你都可以这么称呼它。</li>
-<li>比如：MySQL的一张表映射成一个PHP类（模型model），表的字段就是这个类的成员变量。那么这个中间操作就是ORM。</li>
+        <h3 id="概念">概念</h3><ul>
+<li>特殊的线性表；</li>
+<li>先进先出，尾进头出，FIFO（First In First Out）；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/queue.png" alt="queue"></li>
 </ul>
-<h3 id="实例分析">实例分析</h3><ul>
-<li>公司会员系统项目，会员有三个实体类（会员基本信息类，会员等级类，会员积分类）。</li>
-<li>DAL相当于mysql数据表（会员基本信息，会员等级，会员积分）。</li>
-<li>以上每张表和类都是对应关系，每张表的字段相当于类的属性。</li>
-<li>ORM类起到实体类和数据表之间的映射作用。</li>
+<a id="more"></a>
+<h3 id="使用场景">使用场景</h3><ul>
+<li>需要数据元素一个一个被处理时候使用；‘</li>
+<li>比如：键盘输入、限时抢购等；</li>
 </ul>
-<h3 id="设计">设计</h3><p><img src="/img/ORM.png" alt="ORM"></p>
-<h3 id="代码">代码</h3><ul>
-<li><a href="http://lv-code.com/2015/04/03/php-orm-test/" target="_blank" rel="external">实际代码实例</a></li>
-<li>以上代码是引用刚子的博客，在代码中还使用的php反射机制。</li>
+<h3 id="顺序存储">顺序存储</h3><ul>
+<li>满足线性表顺序存储的特性；</li>
+<li>声明：下文的 <code>maxSize</code> = 数组最大长度</li>
+<li>队头指针<code>front</code>指向队头元素的数组下标注;</li>
+<li>队尾指针<code>rear</code> 指向队尾元素的数组下标+1；</li>
+<li>为了有效利用空间，防止 <code>假溢出</code>，有了 <code>循环队列</code>；</li>
+<li>循环队列的 rear = rear&gt;maxSize ? 0 : rear+1；</li>
+<li>有了front/rear指针，解决了顺序存储 <code>出队列</code> 要移动所有元素的复杂度；</li>
+<li>判空情况：<code>front == rear</code>;</li>
+<li>队列满时，数组中要有一个<code>空闲</code>单元；</li>
+<li>队列满情况判断：<code>(rear+1)%maxSize = front</code>;   (取模 “%”)；</li>
+<li>队列实际长度计算公式：<code>(rear-front+maxSize)%maxSize</code>；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/queue-order.png" alt="queue-order"></li>
 </ul>
+<h3 id="链式存储">链式存储</h3><ul>
+<li>满足线性表链式存储特性；</li>
+<li>线性表的单链表，<code>链队列</code>；</li>
+<li>队头 <code>front</code> 指针指向链队列的头结点；</li>
+<li>对尾 <code>rear</code> 指针指向终端结点；</li>
+<li>空队列时：front和rear都指向头结点；</li>
+<li>建议使用链式存储实现队列；</li>
+<li>头结点的数据域可以存队列的实际长度；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/queue-chain.png" alt="queue-chain"></li>
+</ul>
+<h3 id="讨论板图">讨论板图</h3><p><img src="http://7xirg5.com1.z0.glb.clouddn.com/queue.jpg" alt="queue"></p>
 
       
     </div>
@@ -272,10 +288,15 @@ height : e.offsetHeight,
         
   
   <div class="categories">
-    <a href="/categories/PHP/">PHP</a>
+    <a href="/categories/数据结构/">数据结构</a>
   </div>
 
         
+  
+  <div class="tags">
+    <a href="/tags/data-structure/">data-structure</a>, <a href="/tags/foundation/">foundation</a>
+  </div>
+
         <!-- JiaThis Button BEGIN -->
         <div class="jiathis_style">
         <span class="jiathis_txt">分享到：</span>
@@ -298,10 +319,8 @@ height : e.offsetHeight,
 
 <nav id="pagination" >
 
-<a href="/2015/04/27/php命令行处理参数/" class="alignleft prev" >上一页</a>
 
-
-<a href="/2015/04/03/设计模式（四）代理模式/" class="alignright next" >下一页</a>
+<a href="/2015/05/09/栈/" class="alignright next" >下一页</a>
 
 <div class="clearfix"></div>
 </nav>
