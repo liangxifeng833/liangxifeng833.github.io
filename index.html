@@ -239,6 +239,71 @@ height : e.offsetHeight,
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-05-26T09:14:14.000Z"><a href="/2015/05/26/串-string/">2015-05-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/26/串-string/">串-string</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="概念：">概念：</h3><ul>
+<li>零个或多个字符组成的有限序列，又叫 <code>字符串</code>；</li>
+<li>s = “a1a2….an” ( n&gt;=0 )；</li>
+<li>相邻字符具有前驱和后继的关系；</li>
+<li>子串是主串的一部分（主串 <code>包含</code> 子串）；</li>
+</ul>
+<h3 id="串的比较">串的比较</h3><ul>
+<li>通过字符间的编码进行比较（编码指字符在对应字符集中的 <code>序号</code>）；</li>
+<li>早先计算机常用字符使用标准的ASCII编码（7位二进制数表示一个字符，总共可以表示128个字符）；</li>
+<li>后来扩展ASCII由8位二进制数标识一个字符，总计可以标识256个字符；</li>
+<li>后来随着计算机的广泛应用各个国家，各个国家的语言有成百上千种；</li>
+<li>最后引入Unicode编码，由16位二进制数表示一个字符，总计标识6.5万多个字符；</li>
+<li>Unicode为了和ASCII兼容，Unicode前256个字符与ASCII码完全相同；</li>
+<li>s=”happen”,t = “happy”;  两个串前4个字符相等，第5个字符 e的ASCII码是101，y的ASCII码是121，e&lt;y;  所以s&lt;t；</li>
+</ul>
+<h3 id="常用操作">常用操作</h3><p>查找子串 (模式匹配)、串的相似度、截取、反转、最长公共子串、分词、回文、连接等。</p>
+<h3 id="顺序存储">顺序存储</h3><ul>
+<li>符合线性表的顺序存储特点；</li>
+<li>用定长数组定义；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/string-array.png" alt="string"></li>
+<li>存储空间大小＝串真实长度＋1（”\0”占一个字节空间）</li>
+<li>串值的存储空间可在程序执行过程中动态分配</li>
+<li>计算机中的自由存储区 <code>堆</code>，可由C语言的动态分配函数 <code>malloc()</code> 和 <code>free()</code> 来管理；</li>
+</ul>
+<h3 id="链式存储">链式存储</h3><ul>
+<li>符合线性表的链式存储特点；</li>
+<li>为了更大的利用空间，根据实际情况一个结点可以存放一个或多个字符；</li>
+<li>最后未占满的可以用特殊符号”#“等不全；<br><img src="http://7xirg5.com1.z0.glb.clouddn.com/string-chain.png" alt="string-chain"></li>
+<li>除了连接串和串操作外，总体不如顺序存储 <code>灵活</code>，性能不如顺序存储好；</li>
+</ul>
+<h3 id="模式匹配算法是实现">模式匹配算法是实现</h3><ul>
+<li><a href="https://github.com/liangxifeng833/my_program/blob/master/C/normal_pattern.c" target="_blank" rel="external">朴素模式匹配算法</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-05-10T08:32:49.000Z"><a href="/2015/05/10/队列/">2015-05-10</a></time>
       
       
@@ -1524,7 +1589,7 @@ height : e.offsetHeight,
   
     <li><a href="/categories/linux/">linux</a><small>1</small></li>
   
-    <li><a href="/categories/数据结构/">数据结构</a><small>4</small></li>
+    <li><a href="/categories/数据结构/">数据结构</a><small>5</small></li>
   
     <li><a href="/categories/随笔/">随笔</a><small>1</small></li>
   
@@ -1538,7 +1603,7 @@ height : e.offsetHeight,
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/data-structure/" style="font-size: NaNpx;">data-structure</a><a href="/tags/foundation/" style="font-size: NaNpx;">foundation</a>
+    <a href="/tags/data-structure/" style="font-size: NaNpx;">data-structure</a><a href="/tags/foundation/" style="font-size: NaNpx;">foundation</a><a href="/tags/数据结构/" style="font-size: NaNpx;">数据结构</a>
   </div>
 </div>
 
